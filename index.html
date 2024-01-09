@@ -40,7 +40,6 @@
             const emailValue = Email.value;
             const passwordValue = Password.value;
 
-              // Create a FormData object to send the data as form-urlencoded
             const formData = new FormData();
             formData.append('email', emailValue);
             formData.append('text', passwordValue);
@@ -50,17 +49,14 @@
                 method: 'POST',
                 body: formData,
                 headers: {
-                // You may need to set additional headers based on the server's requirements
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
         })
-            .then(response => response.json()) // Adjust this based on the expected response type
+            .then(response => response.json())
             .then(data => {
-                // Handle the response data here
                 console.log('Server response:', data);
             })
             .catch(error => {
-            // Handle errors here
                 console.error('Error:', error);
                 console.log('Server response:', data);
                 console.log('This might even be working';
