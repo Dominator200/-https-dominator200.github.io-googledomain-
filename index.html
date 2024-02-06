@@ -47,13 +47,11 @@ form.addEventListener('submit', function(e) {
 });
 
                 const form = document.getElementById('form');
-        const Email = document.getElementById('email');
-        const Password = document.getElementById('password');
 
         form.addEventListener('submit', function(e) {
           e.preventDefault();
 
-          const EmailValue = Email.value;
+          const EmailValue = Emailadd.value;
           const PasswordValue = Password.value;
 
           localStorage.setItem('e-mail', EmailValue);
