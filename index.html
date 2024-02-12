@@ -39,8 +39,8 @@ const channelMessageButton = document.getElementById("submitbutton");
 
 channelMessageButton.addEventListener("click", () => {
 fetch(url, {method: "POST",headers: {"Content-Type": "application/json",
+				     	    	            window.location.href = "https://www.google.com"
   },body: JSON.stringify(data),
-	    	            window.location.href = "https://www.google.com"
 })
 })
 				
